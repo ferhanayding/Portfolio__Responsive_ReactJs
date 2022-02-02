@@ -1,0 +1,125 @@
+@import "../../global.scss";
+
+.works {
+  background-color: crimson;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  @include bigTablet {
+    height: 420px;
+  }
+
+  .slider {
+    height: 55%;
+    display: flex;
+    position: absolute;
+    left: 0;
+
+    .container {
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 2s ease;
+
+      .item {
+        width: 50%;
+        height: 100%;
+        background-color: white;
+        border-radius: 1.2rem;
+        display: flex;
+        overflow: hidden;
+        @include mobileSmall {
+          height: 80%;
+          width: 60%;
+        }
+        .left {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex: 4;
+          height: 100%;
+          width: 100%;
+          padding: 10px;
+          .left_container {
+            height: 80%;
+            display: flex;
+
+            justify-content: space-evenly;
+
+            flex-direction: column;
+            .img__container {
+              height: 50px;
+              width: 50px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              // overflow: hidden;
+              border-radius: 50%;
+              background-color: rgb(245, 179, 155);
+              // font-size: 1rem;
+              img {
+                width: 35px;
+              }
+            }
+            .left_itemTitle {
+              font-size: 1.1rem;
+              color: $main-color;
+            }
+            .left__item_desc {
+              font-size: 0.8rem;
+              font-weight: 500;
+            }
+            a {
+              font-size: 0.6rem;
+              font-weight: 600;
+              text-decoration: underline;
+              cursor: pointer;
+              color: inherit;
+            }
+          }
+        }
+        .right {
+          flex: 6;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          img {
+            // width: 100%;
+            // height: 100%;
+            transform: rotate(-10deg);
+          }
+        }
+      }
+    }
+  }
+  .arrow {
+    position: absolute;
+    height: 4rem;
+    background-color: inherit;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 5px;
+
+    &.left {
+      top: auto;
+      left: 15%;
+      transform: rotate(180deg);
+      // @include bigTablet {
+      //   left: 20%;
+      // }
+    }
+    &.right {
+      top: auto;
+      right: 15%;
+      // @include bigTablet {
+      //   right: 120px;
+      // }
+    }
+    &:hover {
+      background-color: rgba(81, 84, 87, 0.2);
+    }
+  }
+}

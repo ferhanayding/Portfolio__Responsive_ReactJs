@@ -1,0 +1,50 @@
+@import "./global.scss";
+.app {
+  height: 100vh;
+}
+.sections {
+  width: 100%;
+  height: calc(100vh - 70px);
+  position: relative;
+  top: 70px;
+  @include mobileSmall {
+    top: 50px;
+  }
+  scroll-snap-type: y mandatory;
+  //scroll u hangi copmonentdeysek ona getiriyo
+  scroll-behavior: smooth; // scroll yavasliyo
+  scrollbar-width: none; // for firebox
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  @include bigTablet {
+    scroll-snap-type: none;
+  }
+  > * {
+    width: 100vw;
+    // height: calc(100vh - 70px);
+    height: 100%;
+    scroll-snap-align: start; // assasgı gidersek gittigimize geliyor
+  }
+  &.opacity {
+    transition: all 1s ease;
+    opacity: 0.1;
+  }
+}
+html {
+  font-size: 100%;
+  height: 100%;
+
+  @include bigTablet {
+    font-size: 80%;
+    height: 80%;
+  }
+  @include mobile {
+    font-size: 60%;
+    height: 60%;
+  }
+  @include mobileSmall {
+    font-size: 40%;
+    height: 40%;
+  }
+}

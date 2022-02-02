@@ -1,0 +1,108 @@
+@import "../../global.scss";
+.contact {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  // @include bigTablet {
+  //   height: ;
+  // }
+  .bg__img {
+    display: none;
+    @include bigTablet {
+      display: block;
+
+      position: absolute;
+      opacity: 0.4;
+    }
+  }
+  @include bigTablet {
+    align-items: start;
+  }
+  .left {
+    flex: 1;
+    background-color: teal;
+    height: 100%;
+    width: 100%;
+    @include bigTablet {
+      display: none;
+    }
+    img {
+      object-fit: cover;
+    }
+  }
+  .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px;
+    height: 100%;
+    width: 100%;
+    @include bigTablet {
+      height: 70%;
+      display: flex;
+      justify-content: start;
+    }
+    h1 {
+      overflow: hidden;
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      position: relative;
+      // background-color: aqua;
+      width: 60%;
+      height: 80%;
+      input {
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        border-bottom: 1px solid teal;
+        width: 70%;
+        font-size: 1rem;
+        font-weight: 500;
+        &:focus {
+          outline: none;
+        }
+      }
+      textarea {
+        width: 80%;
+        height: 100px;
+        padding: 10px;
+        font-size: 1rem;
+        border-radius: 10px;
+        font-weight: 500;
+        &:focus {
+          outline: none;
+        }
+      }
+      button {
+        padding: 10px;
+        border: none;
+        background-color: teal;
+        color: white;
+        border-radius: 10px;
+        font-size: 1rem;
+        cursor: pointer;
+        &:focus {
+          font-weight: 700;
+        }
+      }
+      span {
+        position: absolute;
+        bottom: 80px;
+        text-align: center;
+
+        color: green;
+      }
+    }
+  }
+}
